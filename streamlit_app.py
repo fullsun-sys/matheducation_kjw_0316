@@ -1,12 +1,17 @@
 import streamlit as st
+import os
 
-st.title("자기소개 페이지")
-
+st.title("자기소개서")
+st.write("성명: 김지원")
+st.write("생년월일: 2003년 4월 9일")
+st.write("학교: 인천대학교")
+st.write("학과: 수학교육과")
+st.markdown("---")
 st.header("안녕하세요! 👋")
-st.write("저는 김지원입니다. 수학 교육에 관심이 많고, Python과 Streamlit을 활용한 웹 개발을 좋아합니다.")
 
-st.subheader("관심 분야")
-st.write("- 수학 교육\n- 데이터 분석\n- 웹 개발")
+# 페이지 선택
+page = st.sidebar.selectbox("페이지 선택", ["메인", "자기소개서"])
 
-st.subheader("연락처")
-st.write("이메일: kjw@example.com")
+if page == "자기소개서":
+	st.subheader("간단 소개")
+	st.write("저는 인천대학교 수학교육과 재학 중인 김지원입니다. 수학, 논리적 사고에 관심이 많습니다.")
